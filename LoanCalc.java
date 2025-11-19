@@ -33,7 +33,8 @@ public class LoanCalc {
 		
 		for (int i = 0; i < n; i++) 
 		{
-		balance = balance * (1 + rate / 100.0) - payment;            
+		balance = balance - payment;              
+        balance = balance * (1 + rate / 100.0);           
     	}
 
     return balance;   
