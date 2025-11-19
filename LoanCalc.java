@@ -30,10 +30,10 @@ public class LoanCalc {
 	private static double endBalance(double loan, double rate, int n, double payment) 
 	{	
 		double balance= loan;
+		
 		for (int i = 0; i < n; i++) 
 		{
-		balance = balance * (1 + rate / 100.0);
-        balance = balance - payment;              
+		balance = balance * (1 + rate / 100.0) - payment;            
     	}
 
     return balance;   
@@ -52,7 +52,7 @@ public class LoanCalc {
     
     	while (endBalance(loan, rate, n, g) > 0) 
 		{
-        	g = g + 1;
+        	g = g + epsilon;
         	iterationCounter++;
     	}
 
